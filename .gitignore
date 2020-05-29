@@ -13,3 +13,4 @@ target
 
 # Jahia DX Studio
 repository.xml.generated
+/node_modules/

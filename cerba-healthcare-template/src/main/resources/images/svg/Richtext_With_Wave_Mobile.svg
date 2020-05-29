@@ -1,0 +1,21 @@
+<svg width="375" height="545" viewBox="0 0 375 545" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<mask id="mask0" mask-type="alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="375" height="545">
+<path d="M0 0L375 0V538.444C280.469 528.023 274.962 557.452 139.323 538.444C56.901 526.893 49.6094 534.453 0.000169084 538L0 0Z" fill="white"/>
+</mask>
+<g mask="url(#mask0)">
+<rect width="826" height="509" transform="matrix(-1 0 0 1 645 0)" fill="url(#pattern0)"/>
+<g style="mix-blend-mode:multiply">
+<rect y="550" width="550" height="375" transform="rotate(-90 0 550)" fill="url(#paint0_linear)"/>
+</g>
+</g>
+<defs>
+<pattern id="pattern0" patternContentUnits="objectBoundingBox" width="1" height="1">
+<use xlink:href="#image0" transform="translate(0 -0.0407979) scale(0.000488281 0.000792378)"/>
+</pattern>
+<linearGradient id="paint0_linear" x1="-1.02445e-06" y1="737.5" x2="758.5" y2="737.5" gradientUnits="userSpaceOnUse">
+<stop/>
+<stop offset="1" stop-opacity="0"/>
+</linearGradient>
+<image id="image0" width="2048" height="1365" xlink:href=""/>
+</defs>
+</svg>

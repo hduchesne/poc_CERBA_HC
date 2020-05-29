@@ -56,7 +56,7 @@
     </parent>
     <groupId>org.jahia.se.modules.poc</groupId>
     <artifactId>cerba-healthcare-composants</artifactId>
-    <name>Composants for CERBA Healthcare PoC</name>
+    <name>CERBA Healthcare PoC Composants</name>
     <version>1.0.0-SNAPSHOT</version>
     <packaging>bundle</packaging>
     <description>This is the custom module (Composants for CERBA Healthcare PoC) for running on a Jahia server.</description>

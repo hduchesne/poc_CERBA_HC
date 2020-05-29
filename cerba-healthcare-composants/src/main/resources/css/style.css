@@ -1,0 +1,6 @@
+.nav-card {
+    max-width: calc(100% / 3 - 2rem);
+    margin: 0 1rem 2rem;
+    border-radius: 20px;
+    padding-bottom: 2.5rem;
+}

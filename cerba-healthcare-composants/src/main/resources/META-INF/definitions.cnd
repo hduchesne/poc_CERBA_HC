@@ -1,2 +1,17 @@
 <jnt = 'http://www.jahia.org/jahia/nt/1.0'>
 <jmix = 'http://www.jahia.org/jahia/mix/1.0'>
+<cerbamix = 'http://www.jahia.org/cerbapoc/mix/1.0'>
+<cerbant = 'http://www.jahia.org/cerbapoc/nt/1.0'>
+<cerba = 'http://www.jahia.org/cerbapoc'>
+<bootstrap4nt = 'http://www.jahia.org/bootstrap4/nt/1.0'>
+
+[cerbamix:customHome] mixin
+ extends = bootstrap4nt:navbar
+ itemtype = content
+ - cerba:customRoot (weakreference, picker[type='page']) < 'jnt:page'
+
+[cerbamix:customHomeContent] mixin
+ extends = jnt:page
+ itemtype = content
+ - cerba:cover (weakreference, picker[type='image']) < 'jmix:image'
+ - cerba:abstract (string,textarea) internationalized
