@@ -5,6 +5,8 @@
 <cerba = 'http://www.jahia.org/cerbapoc'>
 <bootstrap4nt = 'http://www.jahia.org/bootstrap4/nt/1.0'>
 
+[cerbamix:content] > jmix:droppableContent, jmix:editorialContent, jmix:cmContentTreeDisplayable mixin
+
 [cerbamix:customHome] mixin
  extends = bootstrap4nt:navbar
  itemtype = content
@@ -15,3 +17,7 @@
  itemtype = content
  - cerba:cover (weakreference, picker[type='image']) < 'jmix:image'
  - cerba:abstract (string,textarea) internationalized
+
+//overwrite the ckeditor configuration for the description feild for news
+[cerbant:news] > jnt:news, cerbamix:content
+ - desc (string, richtext[ckeditor.customConfig='$context/modules/bootstrap4-components/javascript/ckconfig.js']) internationalized
