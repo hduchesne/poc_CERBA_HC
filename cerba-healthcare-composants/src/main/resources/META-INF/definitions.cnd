@@ -21,3 +21,9 @@
 //overwrite the ckeditor configuration for the description feild for news
 [cerbant:news] > jnt:news, cerbamix:content
  - desc (string, richtext[ckeditor.customConfig='$context/modules/bootstrap4-components/javascript/ckconfig.js']) internationalized
+
+[cerbant:categoryList] > jnt:content, cerbamix:content, mix:title
+ - cerba:desc (string, richtext[ckeditor.customConfig='$context/modules/bootstrap4-components/javascript/ckconfig.js']) internationalized
+ - cerba:contentWrapped ()
+ - cerba:maxElt (long) = 6 autocreated indexed=no
+ - cerba:categoryFilter (weakreference, category[autoSelectParent=false]) multiple indexed=no
