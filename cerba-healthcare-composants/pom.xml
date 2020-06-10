@@ -61,6 +61,13 @@
   <properties>
     <jahia-depends>animate,bootstrap4-components,bootstrap4-core,content-media-manager,default,font-awesome,jquery,news,popperjs</jahia-depends>
   </properties>
+  <dependencies>
+    <dependency>
+      <groupId>org.json</groupId>
+      <artifactId>json</artifactId>
+      <version>20200518</version>
+    </dependency>
+  </dependencies>
   <repositories>
     <repository>
       <releases>
@@ -75,6 +82,7 @@
       <url>https://devtools.jahia.com/nexus/content/groups/public</url>
     </repository>
   </repositories>
+
   <build>
     <plugins>
       <plugin>
@@ -82,7 +90,11 @@
         <artifactId>maven-bundle-plugin</artifactId>
         <extensions>true</extensions>
         <configuration>
-          <instructions></instructions>
+          <instructions>
+            <_dsannotations>
+              org.jahia.se.modules.poc.cerba.initializers.*,
+            </_dsannotations>
+          </instructions>
         </configuration>
       </plugin>
     </plugins>

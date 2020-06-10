@@ -24,6 +24,6 @@
 
 [cerbant:categoryList] > jnt:content, cerbamix:content, mix:title
  - cerba:desc (string, richtext[ckeditor.customConfig='$context/modules/bootstrap4-components/javascript/ckconfig.js']) internationalized
- - cerba:contentWrapped ()
- - cerba:maxElt (long) = 6 autocreated indexed=no
- - cerba:categoryFilter (weakreference, category[autoSelectParent=false]) multiple indexed=no
+ - cerba:content2List (string,choicelist[contentTypeInitializer='{"types":["cerbamix:content"]}',resourceBundle]) mandatory multiple nofulltext
+ - cerba:maxElt (long) = 6 autocreated nofulltext
+ - cerba:categoryFilter (weakreference, category[autoSelectParent=false]) multiple nofulltext
