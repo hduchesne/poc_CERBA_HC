@@ -19,7 +19,7 @@
 <ui:displayLanguageSwitchLink var="renderedLanguage" languageCode="${currentResource.locale}"
     display="false" linkKind="${localFormat}"/>
 <div class="btn-group">
-    <button type="button" class="btn btn-primary-inverse dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    <button type="button" class="btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         ${renderedLanguage}
     </button>
     <div class="dropdown-menu">
@@ -33,31 +33,3 @@
         </c:forEach>
     </div>
 </div>
-
-<%--<c:set var="linkKind" value="${currentNode.properties.typeOfDisplay.string}"/>--%>
-<%--<c:set var="flag" value="${linkKind eq 'flag'}"/>--%>
-<%--<div id="languages">--%>
-<%--    <ul>--%>
-<%--        <c:forEach items="${requestScope.languageCodes}" var="language">--%>
-<%--            <ui:displayLanguageSwitchLink languageCode="${language}" display="false" urlVar="switchUrl"--%>
-<%--                                          var="renderedLanguage"--%>
-<%--                                          linkKind="${localFormat}"/>--%>
-<%--            <c:if test="${flag}">--%>
-<%--                <c:set var="renderedLanguage">--%>
-<%--                    <span class='flag ${functions:getLanguageFlagCSSClass(functions:toLocale(language))}'></span>--%>
-<%--                </c:set>--%>
-<%--            </c:if>--%>
-
-<%--            <c:choose>--%>
-<%--                <c:when test="${language eq currentResource.locale}">--%>
-<%--                    <li class="selected"><span>${renderedLanguage}</span></li>--%>
-<%--                </c:when>--%>
-<%--                <c:otherwise>--%>
-<%--                    <li><a title="<fmt:message key='switchTo'/>"--%>
-<%--                           href="<c:url context='/' value='${switchUrl}'/>">${renderedLanguage}</a>--%>
-<%--                    </li>--%>
-<%--                </c:otherwise>--%>
-<%--            </c:choose>--%>
-<%--        </c:forEach>--%>
-<%--    </ul>--%>
-<%--</div>--%>

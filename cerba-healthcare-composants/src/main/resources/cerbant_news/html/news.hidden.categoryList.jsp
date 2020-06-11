@@ -31,7 +31,7 @@
             </div>
         </div>
         <c:if test="${not empty imgNode}">
-            <img src="${imageUrl}" class="img-fluid w-100" alt="${alt}">
+            <img src="${imgUrl}" class="img-fluid w-100" alt="${alt}">
         </c:if>
     </a>
     <div class="portfolio-caption">

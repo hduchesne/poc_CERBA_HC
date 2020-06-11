@@ -37,6 +37,9 @@
     <div class="card-body text-center">
         <h3 class="card-title">${title}</h3>
         <p class="card-text">${abstract}</p>
-        <a href="${url}" class="btn btn-primary"><fmt:message key="read_more" /></a>
+        <a href="${url}" class="lead text-primary">
+            <fmt:message key="read_more" />
+            <i class="fa fa-chevron-right" aria-hidden="true"></i>
+        </a>
     </div>
 </div>

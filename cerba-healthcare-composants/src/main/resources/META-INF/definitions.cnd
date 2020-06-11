@@ -7,10 +7,11 @@
 
 [cerbamix:content] > jmix:droppableContent, jmix:editorialContent, jmix:cmContentTreeDisplayable mixin
 
-[cerbamix:customHome] mixin
- extends = bootstrap4nt:navbar
- itemtype = content
- - cerba:customRoot (weakreference, picker[type='page']) < 'jnt:page'
+// available in BS4 2.4 module
+//[cerbamix:customHome] mixin
+// extends = bootstrap4nt:navbar
+// itemtype = content
+// - cerba:customRoot (weakreference, picker[type='page']) < 'jnt:page'
 
 [cerbamix:customHomeContent] mixin
  extends = jnt:page
