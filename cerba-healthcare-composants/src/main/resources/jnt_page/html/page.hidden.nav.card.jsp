@@ -27,7 +27,7 @@
 <template:addCacheDependency node="${coverNode}" />
 <c:if test="${not empty coverNode}">
     <c:set var="_alt_" value="${coverNode.displayableName}"/>
-    <c:set var="alt" value="${not empty _title_ ? fn:escapeXml(_alt_) : ''}"/>
+    <c:set var="alt" value="${not empty _alt_ ? fn:escapeXml(_alt_) : ''}"/>
     <c:url var="imgUrl" value="${coverNode.url}" context="/" />
 </c:if>
 
@@ -54,9 +54,7 @@
 
             </c:when>
             <c:otherwise>
-                <a href="<c:url value='${url.base}${currentNode.path}.html'/>">
-                    <img class="card-img-top" src="${imgUrl}" alt="${alt}">
-                </a>
+                <img class="card-img-top" src="${imgUrl}" alt="${alt}">
             </c:otherwise>
         </c:choose>
     </c:if>

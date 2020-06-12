@@ -23,7 +23,7 @@
 <template:addCacheDependency node="${imgNode}" />
 <c:if test="${not empty imgNode}">
     <c:set var="_alt_" value="${imgNode.displayableName}"/>
-    <c:set var="alt" value="${not empty _title_ ? fn:escapeXml(_alt_) : ''}"/>
+    <c:set var="alt" value="${not empty _alt_ ? fn:escapeXml(_alt_) : ''}"/>
     <c:url var="imgUrl" value="${imgNode.url}" context="/" />
 </c:if>
 
@@ -52,9 +52,7 @@
 
             </c:when>
             <c:otherwise>
-                <a href="<c:url value='${url.base}${currentNode.path}.html'/>">
-                    <img src="${imgUrl}" alt="${alt}"/>
-                </a>
+                <img src="${imgUrl}" alt="${alt}"/>
             </c:otherwise>
         </c:choose>
 <%--        <div class="image-display" style="background-image: url('${imageURL}');"></div>--%>
