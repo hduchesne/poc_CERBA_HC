@@ -23,8 +23,14 @@
 [cerbant:news] > jnt:news, cerbamix:content
  - desc (string, richtext[ckeditor.customConfig='$context/modules/bootstrap4-components/javascript/ckconfig.js']) internationalized
 
+//todo remove and use default Récupération de contenu ou dernière news... a voir
 [cerbant:categoryList] > jnt:content, cerbamix:content, mix:title
  - cerba:desc (string, richtext[ckeditor.customConfig='$context/modules/bootstrap4-components/javascript/ckconfig.js']) internationalized
  - cerba:content2List (string,choicelist[contentTypeInitializer='{"types":["cerbamix:content"]}',resourceBundle]) mandatory nofulltext
  - cerba:maxElt (long) = 6 autocreated nofulltext
  - cerba:categoryFilter (weakreference, category[autoSelectParent=false]) multiple nofulltext
+
+[cerbant:banner] > jnt:content, cerbamix:content, mix:title
+ - cerba:abstract (string,textarea) internationalized
+ - cerba:bgImg (weakreference, picker[type='image']) < 'jmix:image'
+ - cerba:maskImg (weakreference, picker[type='image']) < 'jmix:image'
