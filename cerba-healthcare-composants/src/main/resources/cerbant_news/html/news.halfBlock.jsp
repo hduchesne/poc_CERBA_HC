@@ -47,7 +47,7 @@
                             <cl:url node="${imgNode}" width="1280" gravity="${gravity}" crop="${crop}" raw="${raw}"/> 1280w,
                             <cl:url node="${imgNode}" width="1600" gravity="${gravity}" crop="${crop}" raw="${raw}"/> 1600w,
                             <cl:url node="${imgNode}" width="2000" gravity="${gravity}" crop="${crop}" raw="${raw}"/> 2000w"
-                     alt="${alt)}"
+                     alt="${alt}"
                 />
 
             </c:when>
