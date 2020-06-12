@@ -6,6 +6,8 @@
 <%@ taglib prefix="utility" uri="http://www.jahia.org/tags/utilityLib" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="functions" uri="http://www.jahia.org/tags/functions" %>
+<%@ taglib prefix="cl" uri="http://www.jahia.org/tags/cloudinary" %>
+
 <%--@elvariable id="currentNode" type="org.jahia.services.content.JCRNodeWrapper"--%>
 <%--@elvariable id="renderContext" type="org.jahia.services.render.RenderContext"--%>
 <%--@elvariable id="currentResource" type="org.jahia.services.render.Resource"--%>
@@ -31,7 +33,32 @@
 
 <div class="card">
     <c:if test="${not empty imgUrl}">
-        <img class="card-img-top" src="${imgUrl}" alt="${alt}">
+        <c:choose>
+            <c:when test="${jcr:isNodeType(renderContext.site, 'cldin:configuration')}">
+
+                <c:set var="gravity" value="auto"/>
+                <c:set var="crop" value="fill"/>
+                <c:set var="raw" value=""/>
+
+                <img src="<cl:url node='${coverNode}' width="768" gravity="${gravity}" crop="${crop}" raw="${raw}"/>"
+                     srcset="<cl:url node="${coverNode}" width="256" crop="${crop}" gravity="${gravity}" raw="${raw}"/> 256w,
+                            <cl:url node="${coverNode}" width="512" gravity="${gravity}" crop="${crop}" raw="${raw}"/> 512w,
+                            <cl:url node="${coverNode}" width="768" gravity="${gravity}" crop="${crop}" raw="${raw}"/> 768w,
+                            <cl:url node="${coverNode}" width="1024" gravity="${gravity}" crop="${crop}" raw="${raw}"/> 1024w,
+                            <cl:url node="${coverNode}" width="1280" gravity="${gravity}" crop="${crop}" raw="${raw}"/> 1280w,
+                            <cl:url node="${coverNode}" width="1600" gravity="${gravity}" crop="${crop}" raw="${raw}"/> 1600w,
+                            <cl:url node="${coverNode}" width="2000" gravity="${gravity}" crop="${crop}" raw="${raw}"/> 2000w"
+                     class="card-img-top"
+                     alt="${alt)}"
+                />
+
+            </c:when>
+            <c:otherwise>
+                <a href="<c:url value='${url.base}${currentNode.path}.html'/>">
+                    <img class="card-img-top" src="${imgUrl}" alt="${alt}">
+                </a>
+            </c:otherwise>
+        </c:choose>
     </c:if>
 
     <div class="card-body text-center">
