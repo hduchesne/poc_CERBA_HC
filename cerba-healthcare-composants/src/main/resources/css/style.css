@@ -26,59 +26,8 @@
     }
 }
 
-.section {
-    padding: 7em 0; }
-
 .nav-list-item li {
     border-radius: 20px;
     padding-bottom: 2.5rem;
     cursor: pointer;
 }
-
-.btn-social{
-    display: inline-block;
-    width: 30px;
-    height: 30px;
-    /*background-color: #59676d; I use now bg-secondary*/
-    border-radius: 50%;
-    will-change: background-color;
-    transition: background-color 0.4s;
-    text-align: center;
-    vertical-align: middle;
-    line-height: 30px;
-    margin-right: .6rem;
-}
-
-.btn-locale-switch > .btn-group,
-.btn-locale-switch > .navbar-nav{
-    border: 1px solid;
-    border-radius: 2rem;
-}
-.btn-locale-switch  > .btn-group .btn,
-.btn-locale-switch > .navbar-nav .nav-link{
-    padding: .2rem .5rem;
-}
-
-.navbar-main .nav-link{
-    font-size: 1.3rem;
-}
-.navbar-main .nav-item {
-    position: relative;
-}
-.navbar-main .nav-item:not(.nav-link):after {
-    position: absolute;
-    right: 100%;
-    bottom: 0;
-    left: .5rem;
-    height: 4px;
-    content: '';
-    transition: right .4s cubic-bezier(.23,1,.32,1);
-    background-color:#6445ba;;
-}
-
-.navbar-main .nav-item.active:after,
-.navbar-main .nav-item:hover:not(.nav-link):after{
-    right: .5rem;
-}
-
-/*box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);*/

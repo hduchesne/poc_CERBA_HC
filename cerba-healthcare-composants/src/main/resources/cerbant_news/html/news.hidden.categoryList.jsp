@@ -9,12 +9,12 @@
 <c:set var="title" value="${not empty _title_ ? fn:escapeXml(_title_) : ''}"/>
 
 <c:set var="imgNode" value="${currentNode.properties['image'].node}"/>
-<template:addCacheDependency node="${imgNode}" />
-<c:if test="${not empty imgNode}">
-    <c:set var="_alt_" value="${imgNode.displayableName}"/>
-    <c:set var="alt" value="${not empty _alt_ ? fn:escapeXml(_alt_) : ''}"/>
-    <c:url var="imgUrl" value="${imgNode.url}" context="/" />
-</c:if>
+<%--<template:addCacheDependency node="${imgNode}" />--%>
+<%--<c:if test="${not empty imgNode}">--%>
+<%--    <c:set var="_alt_" value="${imgNode.displayableName}"/>--%>
+<%--    <c:set var="alt" value="${not empty _alt_ ? fn:escapeXml(_alt_) : ''}"/>--%>
+<%--    <c:url var="imgUrl" value="${imgNode.url}" context="/" />--%>
+<%--</c:if>--%>
 
 <c:url var="url" value="${currentNode.url}" context="/"/>
 
@@ -32,32 +32,36 @@
                 <i class="faNews fa-search-plus"></i>
             </div>
         </div>
-        <c:if test="${not empty imgNode}">
-            <c:choose>
-                <c:when test="${jcr:isNodeType(renderContext.site, 'cldin:configuration')}">
+        <template:module view="hidden.cerbaLink" node="${imgNode}" editable="false">
+            <template:param name="class" value="img-fluid w-100"/>
+        </template:module>
 
-                    <c:set var="gravity" value="auto"/>
-                    <c:set var="crop" value="fill"/>
-                    <c:set var="raw" value=""/>
+<%--        <c:if test="${not empty imgNode}">--%>
+<%--            <c:choose>--%>
+<%--                <c:when test="${jcr:isNodeType(renderContext.site, 'cldin:configuration')}">--%>
 
-                    <img src="<cl:url node='${imgNode}' width="768" gravity="${gravity}" crop="${crop}" raw="${raw}"/>"
-                         srcset="<cl:url node="${imgNode}" width="256" crop="${crop}" gravity="${gravity}" raw="${raw}"/> 256w,
-                            <cl:url node="${imgNode}" width="512" gravity="${gravity}" crop="${crop}" raw="${raw}"/> 512w,
-                            <cl:url node="${imgNode}" width="768" gravity="${gravity}" crop="${crop}" raw="${raw}"/> 768w,
-                            <cl:url node="${imgNode}" width="1024" gravity="${gravity}" crop="${crop}" raw="${raw}"/> 1024w,
-                            <cl:url node="${imgNode}" width="1280" gravity="${gravity}" crop="${crop}" raw="${raw}"/> 1280w,
-                            <cl:url node="${imgNode}" width="1600" gravity="${gravity}" crop="${crop}" raw="${raw}"/> 1600w,
-                            <cl:url node="${imgNode}" width="2000" gravity="${gravity}" crop="${crop}" raw="${raw}"/> 2000w"
-                         class="img-fluid w-100"
-                         alt="${alt}"
-                    />
+<%--                    <c:set var="gravity" value="auto"/>--%>
+<%--                    <c:set var="crop" value="fill"/>--%>
+<%--                    <c:set var="raw" value=""/>--%>
 
-                </c:when>
-                <c:otherwise>
-                    <img src="${imgUrl}" class="img-fluid w-100" alt="${alt}">
-                </c:otherwise>
-            </c:choose>
-        </c:if>
+<%--                    <img src="<cl:url node='${imgNode}' width="768" gravity="${gravity}" crop="${crop}" raw="${raw}"/>"--%>
+<%--                         srcset="<cl:url node="${imgNode}" width="256" crop="${crop}" gravity="${gravity}" raw="${raw}"/> 256w,--%>
+<%--                            <cl:url node="${imgNode}" width="512" gravity="${gravity}" crop="${crop}" raw="${raw}"/> 512w,--%>
+<%--                            <cl:url node="${imgNode}" width="768" gravity="${gravity}" crop="${crop}" raw="${raw}"/> 768w,--%>
+<%--                            <cl:url node="${imgNode}" width="1024" gravity="${gravity}" crop="${crop}" raw="${raw}"/> 1024w,--%>
+<%--                            <cl:url node="${imgNode}" width="1280" gravity="${gravity}" crop="${crop}" raw="${raw}"/> 1280w,--%>
+<%--                            <cl:url node="${imgNode}" width="1600" gravity="${gravity}" crop="${crop}" raw="${raw}"/> 1600w,--%>
+<%--                            <cl:url node="${imgNode}" width="2000" gravity="${gravity}" crop="${crop}" raw="${raw}"/> 2000w"--%>
+<%--                         class="img-fluid w-100"--%>
+<%--                         alt="${alt}"--%>
+<%--                    />--%>
+
+<%--                </c:when>--%>
+<%--                <c:otherwise>--%>
+<%--                    <img src="${imgUrl}" class="img-fluid w-100" alt="${alt}">--%>
+<%--                </c:otherwise>--%>
+<%--            </c:choose>--%>
+<%--        </c:if>--%>
     </a>
     <div class="portfolio-caption">
         <h4>${title}</h4>

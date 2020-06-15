@@ -24,9 +24,18 @@
                <home jcr:primaryType="jnt:pageTemplate"/>
                <simple jcr:primaryType="jnt:pageTemplate"/>
                <headercontent jcr:primaryType="jnt:contentList">
-                  <header-area jcr:mixinTypes="bootstrap4mix:createAbsoluteAreas"
-                               jcr:primaryType="bootstrap4nt:grid"
-                               level="0"/>
+                  <navbar-header addContainerWithinTheNavbar="true"
+                                 addLanguageButton="true"
+                                 addLoginButton="false"
+                                 divClass="collapse navbar-collapse"
+                                 j:view="healthcare"
+                                 jcr:mixinTypes="bootstrap4mix:advancedNavbar bootstrap4mix:customBaseNavbar jmix:renderable"
+                                 jcr:primaryType="bootstrap4nt:navbar"
+                                 loginMenuULClass="navbar-nav flex-row ml-md-auto d-none d-md-flex"
+                                 navClass="navbar navbar-expand-lg"
+                                 recursive="false"
+                                 root="homePage"
+                                 ulClass="navbar-nav mr-auto navbar-main"/>
                </headercontent>
                <cerba-news j:applyOn="cerbant:news"
                            j:defaultTemplate="true"

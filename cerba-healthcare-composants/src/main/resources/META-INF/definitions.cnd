@@ -19,18 +19,28 @@
  - cerba:cover (weakreference, picker[type='image']) < 'jmix:image'
  - cerba:abstract (string,textarea) internationalized
 
+[cerbamix:imageMask] mixin
+ - cerba:mask (string, choicelist[resourceBundle]) = 'blueWave' < 'blueWave','darkWave'
+
 //overwrite the ckeditor configuration for the description feild for news
 [cerbant:news] > jnt:news, cerbamix:content
  - desc (string, richtext[ckeditor.customConfig='$context/modules/bootstrap4-components/javascript/ckconfig.js']) internationalized
 
 //todo remove and use default Récupération de contenu ou dernière news... a voir
-[cerbant:categoryList] > jnt:content, cerbamix:content, mix:title
- - cerba:desc (string, richtext[ckeditor.customConfig='$context/modules/bootstrap4-components/javascript/ckconfig.js']) internationalized
- - cerba:content2List (string,choicelist[contentTypeInitializer='{"types":["cerbamix:content"]}',resourceBundle]) mandatory nofulltext
- - cerba:maxElt (long) = 6 autocreated nofulltext
- - cerba:categoryFilter (weakreference, category[autoSelectParent=false]) multiple nofulltext
+//[cerbant:categoryList] > jnt:content, cerbamix:content, mix:title
+// - cerba:desc (string, richtext[ckeditor.customConfig='$context/modules/bootstrap4-components/javascript/ckconfig.js']) internationalized
+// - cerba:content2List (string,choicelist[contentTypeInitializer='{"types":["cerbamix:content"]}',resourceBundle]) mandatory nofulltext
+// - cerba:maxElt (long) = 6 autocreated nofulltext
+// - cerba:categoryFilter (weakreference, category[autoSelectParent=false]) multiple nofulltext
+[cerbant:newsList] > jnt:contentRetrieval, cerbamix:content, mix:title
+ - cerba:desc (string, textarea) internationalized
+ - j:type (string) = 'cerbant:news' autocreated indexed=no mandatory hidden
+// - j:criteria (string) = 'jcr:created' autocreated indexed=no hidden
+// - j:sortDirection (string) = 'asc' autocreated indexed=no hidden
 
-[cerbant:banner] > jnt:content, cerbamix:content, mix:title
+
+
+// - cerba:maskImg (weakreference, picker[type='image']) < 'jmix:image'
+[cerbant:banner] > jnt:content, cerbamix:content, mix:title, cerbamix:imageMask
  - cerba:abstract (string,textarea) internationalized
- - cerba:bgImg (weakreference, picker[type='image']) < 'jmix:image'
- - cerba:maskImg (weakreference, picker[type='image']) < 'jmix:image'
+ - cerba:bgImg (weakreference, picker[type='image']) mandatory < 'jmix:image'

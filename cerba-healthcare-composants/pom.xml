@@ -59,7 +59,7 @@
   <name>CERBA Healthcare PoC Composants</name>
   <description>This is the custom module (Composants for CERBA Healthcare PoC) for running on a Jahia server.</description>
   <properties>
-    <jahia-depends>cloudinary-integration,animate,bootstrap4-components,bootstrap4-core,content-media-manager,default,font-awesome,jquery,news,popperjs</jahia-depends>
+    <jahia-depends>contentRetrieval,cloudinary-integration,animate,bootstrap4-components,bootstrap4-core,content-media-manager,default,font-awesome,jquery,news,popperjs</jahia-depends>
   </properties>
 
   <dependencies>

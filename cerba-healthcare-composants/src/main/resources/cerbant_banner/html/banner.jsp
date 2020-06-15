@@ -41,6 +41,8 @@
 </c:if>
 <utility:logger level="INFO" value="${maskUrl}"/>
 
+
+
 <div class="slider-item" style="background-image: url(${imgUrl});">
 <%--    <svg><use xlink:href="=${maskAlt}"></use></svg>--%>
     <img src="${maskUrl}"/>
