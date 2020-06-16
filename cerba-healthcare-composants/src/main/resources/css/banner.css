@@ -1,0 +1,100 @@
+.banner {
+    width: 100%;
+    max-width: 1440px;
+    padding: 0 20px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    position: relative;
+    min-height: auto;
+    padding: 0;
+    margin: 60px 0 0;
+}
+
+.banner .content {
+    max-width: 1280px;
+    margin: 0 auto;
+    position: absolute;
+    width: 100%;
+    z-index: 2;
+    /*color: #fff;*/
+    font-weight: 400;
+    padding: 0 20px;
+    top: 5%;
+}
+
+.banner .content .title {
+    /*font-family: 'VarelaRound';*/
+    font-weight: 300;
+    font-size: 3.214rem;
+    line-height: 49px;
+    letter-spacing: 1px;
+    display: block;
+}
+
+.banner .content p {
+    font-weight: 600;
+    letter-spacing: 1px;
+    line-height: 125%;
+    font-size: 1.429rem;
+}
+
+.banner .svg-desktop {
+    display: none;
+}
+
+.banner .svg-mobile {
+    display: block;
+    margin: -3px 0 0;
+}
+
+@media screen and (min-width: 767px) {
+    .banner {
+        margin: 0 auto;
+    }
+    .banner .content {
+        padding: 70px 0 0 75px;
+        left: auto;
+        top: 0;
+        transform: none;
+    }
+    .banner .content p {
+        margin: 5px 0 0 5px;
+        margin-bottom: 0px;
+        font-size: 1rem;
+    }
+    .banner .svg-desktop {
+        display: block;
+    }
+    .banner .svg-mobile {
+        display: none;
+    }
+}
+@media screen and (min-width: 992px) {
+    .banner .content {
+        padding: 60px 0 0 75px;
+    }
+
+    .banner .svg-wrapper {
+        position: relative;
+        width: 100%;
+        padding-bottom: 51%;
+        vertical-align: middle;
+    }
+    .banner svg {
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+    .banner .content .title {
+        font-size: 4.091rem;
+        line-height: 100px;
+    }
+    .banner .content p {
+        font-size: 1.455rem;
+    }
+}
+@media screen and (min-width: 1120px) {
+    .banner .content {
+        padding: 100px 20px 0 147px;
+    }
+}

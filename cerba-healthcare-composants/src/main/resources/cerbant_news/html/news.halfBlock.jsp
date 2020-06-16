@@ -39,7 +39,7 @@
 
 <div class="half d-lg-flex d-block">
     <picture>
-        <template:module view="hidden.cerbaLink" node="${imgNode}" editable="false"/>
+        <template:module view="hidden.cerba.img" node="${imgNode}" editable="false"/>
 <%--        <c:choose>--%>
 <%--            <c:when test="${jcr:isNodeType(renderContext.site, 'cldin:configuration')}">--%>
 

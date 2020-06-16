@@ -33,7 +33,7 @@
 <%--</c:if>--%>
 
 <div class="card">
-    <template:module view="hidden.cerbaLink" node="${coverNode}" editable="false">
+    <template:module view="hidden.cerba.img" node="${coverNode}" editable="false">
         <template:param name="class" value="card-img-top"/>
     </template:module>
 <%--    <c:if test="${not empty imgUrl}">--%>

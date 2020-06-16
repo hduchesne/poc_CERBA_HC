@@ -24,18 +24,7 @@
                <home jcr:primaryType="jnt:pageTemplate"/>
                <simple jcr:primaryType="jnt:pageTemplate"/>
                <headercontent jcr:primaryType="jnt:contentList">
-                  <navbar-header addContainerWithinTheNavbar="true"
-                                 addLanguageButton="true"
-                                 addLoginButton="false"
-                                 divClass="collapse navbar-collapse"
-                                 j:view="healthcare"
-                                 jcr:mixinTypes="bootstrap4mix:advancedNavbar bootstrap4mix:customBaseNavbar jmix:renderable"
-                                 jcr:primaryType="bootstrap4nt:navbar"
-                                 loginMenuULClass="navbar-nav flex-row ml-md-auto d-none d-md-flex"
-                                 navClass="navbar navbar-expand-lg"
-                                 recursive="false"
-                                 root="homePage"
-                                 ulClass="navbar-nav mr-auto navbar-main"/>
+                  <header-static-area j:limitedAbsoluteAreaEdit="false" jcr:primaryType="jnt:absoluteArea"/>
                </headercontent>
                <cerba-news j:applyOn="cerbant:news"
                            j:defaultTemplate="true"
@@ -57,6 +46,9 @@
                      </text>
                   </pagecontent>
                </cerba-news>
+               <footercontent jcr:primaryType="jnt:contentList">
+                  <footer-static-area j:limitedAbsoluteAreaEdit="false" jcr:primaryType="jnt:absoluteArea"/>
+               </footercontent>
             </base>
             <content-template j:applyOn="jnt:content"
                               j:hiddenTemplate="true"

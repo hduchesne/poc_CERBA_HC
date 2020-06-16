@@ -32,7 +32,7 @@
                 <i class="faNews fa-search-plus"></i>
             </div>
         </div>
-        <template:module view="hidden.cerbaLink" node="${imgNode}" editable="false">
+        <template:module view="hidden.cerba.img" node="${imgNode}" editable="false">
             <template:param name="class" value="img-fluid w-100"/>
         </template:module>
 

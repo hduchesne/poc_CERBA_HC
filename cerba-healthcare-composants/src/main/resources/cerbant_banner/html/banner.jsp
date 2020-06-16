@@ -18,40 +18,24 @@
 <%--@elvariable id="currentResource" type="org.jahia.services.render.Resource"--%>
 <%--@elvariable id="url" type="org.jahia.services.render.URLGenerator"--%>
 
+<template:addResources type="css" resources="banner.css"/>
+
 <c:set var="title" value="${fn:escapeXml(currentNode.displayableName)}"/>
-<%--<c:set var="title" value="${not empty _title_ ? fn:escapeXml(_title_) : ''}"/>--%>
-
 <c:set var="abstract" value="${fn:escapeXml(currentNode.properties['cerba:abstract'].string)}"/>
-
-<%--img--%>
+<c:set var="mask" value="${currentNode.properties['cerba:mask'].string}"/>
 <c:set var="imgNode" value="${currentNode.properties['cerba:bgImg'].node}"/>
-<template:addCacheDependency node="${imgNode}" />
-<c:if test="${not empty imgNode}">
-    <c:set var="imgAlt" value="${fn:escapeXml(imgNode.displayableName)}"/>
-<%--    <c:set var="alt" value="${not empty _alt_ ? fn:escapeXml(_alt_) : ''}"/>--%>
-    <c:url var="imgUrl" value="${imgNode.url}" context="/" />
+
+<c:set var="imageView" value="hidden.cerba.img"/>
+<c:if test="${not empty mask}">
+    <c:set var="imageView" value="hidden.cerba.${mask}"/>
 </c:if>
 
-<c:set var="maskNode" value="${currentNode.properties['cerba:maskImg'].node}"/>
-<template:addCacheDependency node="${maskNode}" />
-<c:if test="${not empty maskNode}">
-    <c:set var="maskAlt" value="${fn:escapeXml(maskNode.displayableName)}"/>
-<%--    <c:set var="alt" value="${not empty _alt_ ? fn:escapeXml(_alt_) : ''}"/>--%>
-    <c:url var="maskUrl" value="${maskNode.url}" context="/" />
-</c:if>
-<utility:logger level="INFO" value="${maskUrl}"/>
-
-
-
-<div class="slider-item" style="background-image: url(${imgUrl});">
-<%--    <svg><use xlink:href="=${maskAlt}"></use></svg>--%>
-    <img src="${maskUrl}"/>
-    <div class="container">
-        <div class="row slider-text align-items-center justify-content-center">
-            <div class="col-md-8 text-center col-sm-12 element-animate pt-5">
-                <h1 class="pt-5"><span>${title}</span></h1>
-                <p class="mb-5 w-75">${abstract}</p>
-            </div>
-        </div>
+<div class="banner">
+    <template:module view="${imageView}" node="${imgNode}" editable="false"/>
+    <div class="content text text-white">
+        <h1 class="title">${title}</h1>
+        <span>
+            <p class="mb-5">${abstract}</p>
+        </span>
     </div>
 </div>
