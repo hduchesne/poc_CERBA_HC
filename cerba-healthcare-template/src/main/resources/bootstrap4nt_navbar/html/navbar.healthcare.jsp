@@ -92,15 +92,12 @@
             ${brandText}
         </a>
 
-        <button class="${buttonClass}" type="button" data-toggle="collapse"
-                data-target="#navbar-${currentNode.identifier}" aria-controls="navbar-${currentNode.identifier}"
-                aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
 
-        <div class="${class} flex-column" id="navbar-${currentNode.identifier}"
-             style="align-items: unset;flex-grow:unset;">
-            <div class="flex-row d-flex justify-content-end mt-2 mb-2" style="margin-left:20px;">
+<%--            id="navbar-${currentNode.identifier}"--%>
+<%--        <div class="navbar-header flex-column" style="align-items: unset;flex-grow:unset;">--%>
+        <div class="navbar-header">
+<%--            <div class="navbar-social flex-row d-flex justify-content-end mt-2 mb-2" style="margin-left:20px;">--%>
+            <div class="navbar-social">
                 <template:include view="hidden.social.btn"/>
                 <c:if test="${addLanguageButton}">
                     <div class="btn-locale-switch">
@@ -108,11 +105,18 @@
                         <template:include view="hidden.language.selector"/>
                     </div>
                 </c:if>
+                <button class="${buttonClass}" type="button" data-toggle="collapse"
+                        data-target="#navbar-${currentNode.identifier}" aria-controls="navbar-${currentNode.identifier}"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
             </div>
-            <%--    <template:include view="basenav"/>--%>
-            <template:include view="basenav"/>
-            <%--    <template:include view="hidden.nest.logout"/>--%>
+
+            <div class="${divClass}" id="navbar-${currentNode.identifier}">
+                <template:include view="basenav"/>
+            </div>
         </div>
+
 
 <%--        <div class="${divClass}" id="navbar-${currentNode.identifier}">--%>
 <%--            <template:include view="basenav"/>--%>

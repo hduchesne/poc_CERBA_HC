@@ -1,24 +1,63 @@
 .navbar-main .nav-link{
     font-size: 1.3rem;
-}
-.navbar-main .nav-item {
     position: relative;
 }
-.navbar-main .nav-item:not(.nav-link):after {
+/*.navbar-main .nav-item {*/
+/*    position: relative;*/
+/*}*/
+/*.navbar-main .nav-item:not(.nav-link):after {*/
+.navbar-main .nav-item:not(.nav-link) .nav-link:after {
     position: absolute;
     right: 100%;
     bottom: 0;
-    left: .5rem;
+    left: 0;
     height: 4px;
     content: '';
     transition: right .4s cubic-bezier(.23,1,.32,1);
     background-color:#6445ba;;
 }
 
-.navbar-main .nav-item.active:after,
-.navbar-main .nav-item:hover:not(.nav-link):after{
-    right: .5rem;
+/*.navbar-main .nav-item.active:after,*/
+/*.navbar-main .nav-item:hover:not(.nav-link):after{*/
+.navbar-main .nav-item.active .nav-link:after,
+.navbar-main .nav-item:hover:not(.nav-link) .nav-link:after{
+    right: 0;
 }
+
+.navbar-header{
+    display: flex;
+    /*align-items: unset;*/
+    /*flex-grow: unset;*/
+}
+
+.navbar-social{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.navbar-social ul {
+    list-style: none;
+    /*margin-right: 6px;*/
+}
+
+.navbar-social li {
+    display: inline-block;
+    padding: 0 0 0 6px;
+}
+
+.navbar-social .navbar-toggler,
+.navbar-social .btn-locale-switch{
+    margin-left: 10px;
+}
+
+/*.navbar-collapse{*/
+/*    position: absolute;*/
+/*    left: 0px;*/
+/*    top: 60px;*/
+/*    width: 100%;*/
+/*    background-color: rgb(255, 255, 255);*/
+/*    z-index: 5;*/
+/*}*/
 
 .btn-social{
     display: inline-block;
@@ -31,7 +70,7 @@
     text-align: center;
     vertical-align: middle;
     line-height: 30px;
-    margin-right: .6rem;
+    /*margin-right: .6rem;*/
 }
 
 .btn-locale-switch > .btn-group,
@@ -98,6 +137,38 @@
         margin: 0 20px 0 0;
     }
 }
+@media screen and (max-width: 991px) {
+    .navbar-header .navbar-collapse {
+        position: absolute;
+        left: 0px;
+        top: 60px;
+        width: 100%;
+        background-color: rgb(255, 255, 255);
+        z-index: 5;
+        text-align: right;
+        padding-bottom: 27px;
+    }
+
+    .navbar-main .nav-item .nav-link{
+        display: inline-block;
+        margin-right: 1rem;
+    }
+}
+@media screen and (min-width: 992px) {
+    .navbar-header{
+        /*margin: 5px 13px 0 0;*/
+        display: block;
+        /*flex-direction: column;*/
+    }
+    .navbar-main .nav-item:not(.nav-link) .nav-link:after {
+        left:.5rem
+    }
+    .navbar-main .nav-item.active .nav-link:after,
+    .navbar-main .nav-item:hover:not(.nav-link) .nav-link:after{
+        right: .5rem;
+    }
+}
+
 /*@media screen and (min-width: 992px) {*/
     body,html{
         font-size: 14px;

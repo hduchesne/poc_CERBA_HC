@@ -22,7 +22,7 @@
     <button type="button" class="btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         ${renderedLanguage}
     </button>
-    <div class="dropdown-menu">
+    <div class="dropdown-menu dropdown-menu-right">
         <c:forEach items="${requestScope.languageCodes}" var="language">
             <ui:displayLanguageSwitchLink var="renderedLanguage" urlVar="_url_" languageCode="${language}"
                 display="false" linkKind="${localFormat}"/>
