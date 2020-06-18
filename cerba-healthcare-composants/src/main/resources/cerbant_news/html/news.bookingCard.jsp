@@ -38,7 +38,9 @@
     <li class="booking-card flex" style="background-image: url(${imageUrl})">
         <div class="book-container">
             <div class="content">
-                <a class="btn btn-outline-primary" href="<c:url value='${url.base}${currentNode.path}.html?jsite=${siteNode.UUID}'/>"><fmt:message key='label.readmore'/></a>
+                <a class="btn btn-outline-primary" href="<c:url value='${url.base}${currentNode.path}.html?jsite=${siteNode.UUID}'/>">
+                    <fmt:message key='read_more'/>
+                </a>
             </div>
         </div>
         <div class="informations-container text-primary">
