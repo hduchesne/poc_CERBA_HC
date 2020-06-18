@@ -15,6 +15,24 @@
                <themes jcr:primaryType="jnt:folder">
                   <default jcr:primaryType="jnt:folder"/>
                </themes>
+               <icons jcr:primaryType="jnt:folder">
+                  <template_x0020_layout_x0020_icon.png j:height="512"
+                                                        j:width="512"
+                                                        jcr:mixinTypes="jmix:image"
+                                                        jcr:primaryType="jnt:file">
+                     <jcr:content jcr:mimeType="image/png" jcr:primaryType="jnt:resource"/>
+                     <thumbnail jcr:mimeType="image/png" jcr:primaryType="jnt:resource"/>
+                     <thumbnail2 jcr:mimeType="image/png" jcr:primaryType="jnt:resource"/>
+                  </template_x0020_layout_x0020_icon.png>
+                  <template_x0020_layout_x0020_icon-resize32x32.png j:height="32"
+                                                                    j:width="32"
+                                                                    jcr:mixinTypes="jmix:image"
+                                                                    jcr:primaryType="jnt:file">
+                     <jcr:content jcr:mimeType="image/png" jcr:primaryType="jnt:resource"/>
+                     <thumbnail jcr:mimeType="image/png" jcr:primaryType="jnt:resource"/>
+                     <thumbnail2 jcr:mimeType="image/png" jcr:primaryType="jnt:resource"/>
+                  </template_x0020_layout_x0020_icon-resize32x32.png>
+               </icons>
             </files>
             <contents jcr:primaryType="jnt:contentFolder"/>
             <base j:theme="#/modules/cerba-healthcare-template/templates/files/themes/default"
@@ -66,6 +84,50 @@
                <footercontent jcr:primaryType="jnt:contentList">
                   <footer-static-area j:limitedAbsoluteAreaEdit="false" jcr:primaryType="jnt:absoluteArea"/>
                </footercontent>
+               <fixed-template j:hiddenTemplate="false"
+                               j:templateThumbnail="#/modules/cerba-healthcare-template/templates/files/icons/template_x0020_layout_x0020_icon-resize32x32.png"
+                               jcr:primaryType="jnt:pageTemplate">
+                  <j:translation_en jcr:language="en"
+                                    jcr:mixinTypes="mix:title"
+                                    jcr:primaryType="jnt:translation"
+                                    jcr:title="Fixed Template"/>
+                  <pagecontent jcr:primaryType="jnt:contentList">
+                     <banner-full-width grid="12"
+                                        gridLayout="full-width"
+                                        jcr:mixinTypes="bootstrap4mix:createContainer bootstrap4mix:createRow bootstrap4mix:createSection bootstrap4mix:predefinedGrid"
+                                        jcr:primaryType="bootstrap4nt:grid"
+                                        rowHorizontalAlignment="default"
+                                        rowVerticalAlignment="default"
+                                        sectionElement="div"
+                                        typeOfGrid="predefinedGrid"/>
+                     <Main-Content-Area grid="12"
+                                        gridLayout="fixed-width"
+                                        jcr:mixinTypes="bootstrap4mix:createContainer bootstrap4mix:createRow bootstrap4mix:createSection bootstrap4mix:predefinedGrid"
+                                        jcr:primaryType="bootstrap4nt:grid"
+                                        rowHorizontalAlignment="default"
+                                        rowVerticalAlignment="default"
+                                        sectionCssClass="section"
+                                        sectionElement="section"
+                                        typeOfGrid="predefinedGrid"/>
+                     <layout-and-grid grid="4_4_4"
+                                      gridLayout="fixed-width"
+                                      jcr:mixinTypes="bootstrap4mix:createContainer bootstrap4mix:createRow bootstrap4mix:createSection bootstrap4mix:predefinedGrid"
+                                      jcr:primaryType="bootstrap4nt:grid"
+                                      rowHorizontalAlignment="default"
+                                      rowVerticalAlignment="default"
+                                      sectionCssClass="section"
+                                      sectionElement="section"
+                                      typeOfGrid="predefinedGrid"/>
+                     <layout-and-grid-1 grid="12"
+                                        gridLayout="full-width"
+                                        jcr:mixinTypes="bootstrap4mix:createContainer bootstrap4mix:createRow bootstrap4mix:createSection bootstrap4mix:predefinedGrid"
+                                        jcr:primaryType="bootstrap4nt:grid"
+                                        rowHorizontalAlignment="default"
+                                        rowVerticalAlignment="default"
+                                        sectionElement="div"
+                                        typeOfGrid="predefinedGrid"/>
+                  </pagecontent>
+               </fixed-template>
             </base>
             <content-template j:applyOn="jnt:content"
                               j:hiddenTemplate="true"
