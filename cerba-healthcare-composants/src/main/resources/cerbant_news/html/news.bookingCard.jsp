@@ -24,7 +24,9 @@
 <jcr:nodeProperty node="${currentNode}" name="jcr:title" var="newsTitle"/>
 <jcr:nodeProperty node="${currentNode}" name="date" var="newsDate"/>
 <jcr:nodeProperty node="${currentNode}" var="newsCategories" name="j:defaultCategory"/>
-<template:addResources type="css" resources="portfolio" />
+
+<template:addResources type="css" resources="bookingCard.css" />
+
 <c:if test="${not empty newsImage}">
     <c:url value="${url.files}${newsImage.node.path}" var="imageUrl"/>
     <c:if test="${not empty newsImage}">
