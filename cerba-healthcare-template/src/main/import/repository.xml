@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <content xmlns:j="http://www.jahia.org/jahia/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0">
    <modules jcr:primaryType="jnt:modules">
-      <cerba-healthcare-template j:dependencies="animate bootstrap4-components bootstrap4-core default font-awesome jquery popperjs"
+      <cerba-healthcare-template j:dependencies="animate bootstrap4-components bootstrap4-core cerba-healthcare-composants default font-awesome jexperience jexperience-components jexperience-queries-components jquery popperjs"
                                  j:installedModules="cerba-healthcare-template"
                                  j:modulePriority="0"
                                  j:moduleType="templatesSet"
@@ -36,14 +36,31 @@
                                     jcr:primaryType="jnt:translation"
                                     jcr:title="Cerba News"/>
                   <pagecontent jcr:primaryType="jnt:contentList">
-                     <text jcr:primaryType="bootstrap4nt:text">
-                        <j:translation_en jcr:language="en"
-                                          jcr:primaryType="jnt:translation"
-                                          text="&lt;p&gt;hello&lt;/p&gt;&#xA;"/>
-                        <j:translation_fr jcr:language="fr"
-                                          jcr:primaryType="jnt:translation"
-                                          text="&lt;p&gt;test&lt;/p&gt;&#xA;"/>
-                     </text>
+                     <layout-and-grid grid="9_3"
+                                      gridLayout="fixed-width"
+                                      jcr:mixinTypes="bootstrap4mix:createContainer bootstrap4mix:createRow bootstrap4mix:createSection bootstrap4mix:predefinedGrid"
+                                      jcr:primaryType="bootstrap4nt:grid"
+                                      rowHorizontalAlignment="default"
+                                      rowVerticalAlignment="default"
+                                      sectionCssClass="section"
+                                      sectionElement="section"
+                                      typeOfGrid="predefinedGrid">
+                        <layout-and-grid-main jcr:primaryType="jnt:contentList">
+                           <main-resource-display j:mainResourceView="card-img-bottomtext"
+                                                  jcr:primaryType="jnt:mainResourceDisplay"/>
+                        </layout-and-grid-main>
+                        <layout-and-grid-side jcr:primaryType="jnt:contentList">
+                           <dautres-actualites-pour-vous hideViewedNews="false"
+                                                         jcr:primaryType="pqcnt:personalizedNewsRetriever"
+                                                         maxNews="5"
+                                                         newsDateLastDays="30">
+                              <j:translation_en jcr:language="en"
+                                                jcr:mixinTypes="mix:title"
+                                                jcr:primaryType="jnt:translation"
+                                                jcr:title="D'autres actualités pour vous"/>
+                           </dautres-actualites-pour-vous>
+                        </layout-and-grid-side>
+                     </layout-and-grid>
                   </pagecontent>
                </cerba-news>
                <footercontent jcr:primaryType="jnt:contentList">
