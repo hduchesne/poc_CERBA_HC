@@ -35,6 +35,8 @@
 <div class="card">
     <template:module view="hidden.cerba.img" node="${coverNode}" editable="false">
         <template:param name="class" value="card-img-top"/>
+        <template:param name="widths" value="256,512"/>
+        <template:param name="defaultWidth" value="512"/>
     </template:module>
 <%--    <c:if test="${not empty imgUrl}">--%>
 <%--        <c:choose>--%>

@@ -11,9 +11,13 @@
 
     <c:set var="class" value="${fn:escapeXml(currentResource.moduleParams.class)}"/>
     <c:set var="id" value="${currentResource.moduleParams.id ? currentResource.moduleParams.id : currentNode.identifier}"/>
+    <%-- cloudinary config params --%>
     <c:set var="gravity" value="${currentResource.moduleParams.gravity ? currentResource.moduleParams.gravity : 'auto'}"/>
     <c:set var="crop" value="${currentResource.moduleParams.crop ? currentResource.moduleParams.crop : 'fill'}"/>
     <c:set var="raw" value="${currentResource.moduleParams.raw ? currentResource.moduleParams.raw : ''}"/>
+    <c:set var="widths" value="${currentResource.moduleParams.widths ? currentResource.moduleParams.widths :
+        '256,512,768,1024,1280,1600,2000'}"/>
+    <c:set var="defaultWidth" value="${currentResource.moduleParams.defaultWidth ? currentResource.moduleParams.defaultWidth :'768'}"/>
 
     <c:set var="alt" value="${fn:escapeXml(currentNode.displayableName)}"/>
     <c:url var="imgUrl" value="${currentNode.url}" context="/" />
@@ -25,14 +29,18 @@
 <%--            <c:set var="crop" value="fill"/>--%>
 <%--            <c:set var="raw" value=""/>--%>
 
-            <img src="<cl:url node='${currentNode}' width="768" gravity="${gravity}" crop="${crop}" raw="${raw}"/>"
-                 srcset="<cl:url node="${currentNode}" width="256" crop="${crop}" gravity="${gravity}" raw="${raw}"/> 256w,
-                            <cl:url node="${currentNode}" width="512" gravity="${gravity}" crop="${crop}" raw="${raw}"/> 512w,
-                            <cl:url node="${currentNode}" width="768" gravity="${gravity}" crop="${crop}" raw="${raw}"/> 768w,
-                            <cl:url node="${currentNode}" width="1024" gravity="${gravity}" crop="${crop}" raw="${raw}"/> 1024w,
-                            <cl:url node="${currentNode}" width="1280" gravity="${gravity}" crop="${crop}" raw="${raw}"/> 1280w,
-                            <cl:url node="${currentNode}" width="1600" gravity="${gravity}" crop="${crop}" raw="${raw}"/> 1600w,
-                            <cl:url node="${currentNode}" width="2000" gravity="${gravity}" crop="${crop}" raw="${raw}"/> 2000w"
+            <img src="<cl:url node='${currentNode}' width="${defaultWidth}" gravity="${gravity}" crop="${crop}" raw="${raw}"/>"
+                 srcset="<c:forEach items="${fn:split(widths, ',')}" var="width" varStatus="status">
+                            <c:if test="${!status.first}">,</c:if>
+                            <cl:url node="${currentNode}" width="${width}" crop="${crop}" gravity="${gravity}" raw="${raw}"/> ${width}w
+                        </c:forEach>
+<%--                            <cl:url node="${currentNode}" width="512" gravity="${gravity}" crop="${crop}" raw="${raw}"/> 512w,--%>
+<%--                            <cl:url node="${currentNode}" width="768" gravity="${gravity}" crop="${crop}" raw="${raw}"/> 768w,--%>
+<%--                            <cl:url node="${currentNode}" width="1024" gravity="${gravity}" crop="${crop}" raw="${raw}"/> 1024w,--%>
+<%--                            <cl:url node="${currentNode}" width="1280" gravity="${gravity}" crop="${crop}" raw="${raw}"/> 1280w,--%>
+<%--                            <cl:url node="${currentNode}" width="1600" gravity="${gravity}" crop="${crop}" raw="${raw}"/> 1600w,--%>
+<%--                            <cl:url node="${currentNode}" width="2000" gravity="${gravity}" crop="${crop}" raw="${raw}"/> 2000w--%>
+                        "
                  class="${class}"
                  alt="${alt}"
             />
