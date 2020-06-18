@@ -36,7 +36,7 @@
                 <stop offset="1" stop-opacity="0"/>
             </linearGradient>
             <c:choose>
-                <c:when test="${jcr:isNodeType(renderContext.site, 'cldin:configuration')}">
+                <c:when test="${jcr:isNodeType(renderContext.site, 'cldin:configuration') && renderContext.liveMode == true}">
                     <image id="image0_dw" preserveAspectRatio="xMidYMid slice" width="100%" height="100%"
                            xlink:href="<cl:url node="${currentNode}" width="1439" gravity="${gravity}" crop="${crop}" raw="${raw}"/>"/>
                 </c:when>
@@ -71,7 +71,7 @@
                 <stop offset="1" stop-opacity="0"/>
             </linearGradient>
             <c:choose>
-                <c:when test="${jcr:isNodeType(renderContext.site, 'cldin:configuration')}">
+                <c:when test="${jcr:isNodeType(renderContext.site, 'cldin:configuration') && renderContext.liveMode == true}">
                     <image id="image0_dw_xs" preserveAspectRatio="xMidYMid slice" width="100%" height="100%"
                            xlink:href="<cl:url node="${currentNode}" width="375" gravity="${gravity}" crop="${crop}" raw="${raw}"/>"/>
                 </c:when>
