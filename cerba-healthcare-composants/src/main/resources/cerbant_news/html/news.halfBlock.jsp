@@ -8,6 +8,8 @@
 
 <%--@elvariable id="currentNode" type="org.jahia.services.content.JCRNodeWrapper"--%>
 
+<template:addResources type="css" resources="style.css"/>
+
 <c:set var="title" value="${fn:escapeXml(currentNode.displayableName)}"/>
 <c:set var="description" value="${currentNode.properties['desc'].string}"/>
 <fmt:setLocale value="${language}" scope="session"/>
@@ -16,28 +18,41 @@
 <c:url var="url" value="${currentNode.url}" context="/"/>
 <!-- category -->
 <c:set var="newsCategories" value="${currentNode.properties['j:defaultCategory']}"/>
+<c:set var="numCat" value="${fn:length(newsCategories)}" />
 
-<c:forEach items="${newsCategories}" var="category" varStatus="status">
-    <c:set var="categories" value="${categories} ${category.node.displayableName}"/>
+<%--loop in reverse order--%>
+<c:forEach var="i" begin="1" end="${numCat}"  varStatus="status">
+    <c:choose>
+        <c:when test="${status.index == 1}">
+            <c:set var="categories" value="${newsCategories[numCat-i].node.displayableName}"/>
+        </c:when>
+        <c:otherwise>
+            <c:set var="categories" value="${categories} & ${newsCategories[numCat-i].node.displayableName}"/>
+        </c:otherwise>
+    </c:choose>
 </c:forEach>
 
 <%--img--%>
 <c:set var="imgNode" value="${currentNode.properties['image'].node}"/>
 
-<div class="half d-lg-flex d-block">
+<article class="half d-md-flex d-block">
     <picture>
         <template:module view="hidden.cerba.img" node="${imgNode}" editable="false">
+            <template:param name="class" value="image"/>
             <template:param name="widths" value="512,1024"/>
             <template:param name="defaultWidth" value="1024"/>
         </template:module>
     </picture>
     <div class="text">
-        <span class="category-wrapper">
+        <span class="category-wrapper text-primary">
             ${categories}
-            <span>${date}</span>
+            <span class="text-secondary">${date}</span>
         </span>
-        <h3>${title}</h3>
+        <h3 class="h4 mt-3">${title}</h3>
         ${description}
-        <a href="${url}" class="btn btn-primary"><fmt:message key="read_more" /></a>
+        <a href="${url}" class="lead text-primary">
+            <fmt:message key="read_more" />
+            <i class="fa fa-chevron-right" aria-hidden="true"></i>
+        </a>
     </div>
-</div>
+</article>

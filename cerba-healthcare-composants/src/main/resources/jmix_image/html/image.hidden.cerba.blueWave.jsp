@@ -109,7 +109,7 @@
             <c:choose>
                 <c:when test="${jcr:isNodeType(renderContext.site, 'cldin:configuration')}">
                     <image id="image0_bw_xs"  preserveAspectRatio="xMidYMid slice" width="100%" height="100%"
-                           xlink:href="<cl:url node="${currentNode}" width="375" gravity="${gravity}" crop="${crop}" raw="${raw}"/>"/>
+                           xlink:href="<cl:url node="${currentNode}" width="750" gravity="${gravity}" crop="${crop}" raw="${raw}"/>"/>
                 </c:when>
                 <c:otherwise>
                     <image id="image0_bw_xs"  preserveAspectRatio="xMidYMid slice" width="100%" height="100%"

@@ -21,7 +21,7 @@
 <c:url var="imgUrl" value="${currentNode.url}" context="/" />
 
 <c:choose>
-    <c:when test="${jcr:isNodeType(renderContext.site, 'cldin:configuration')}">
+    <c:when test="${jcr:isNodeType(renderContext.site, 'cldin:configuration') && renderContext.liveMode == true}">
         <img src="<cl:url node='${currentNode}' width="${defaultWidth}" gravity="${gravity}" crop="${crop}" raw="${raw}"/>"
              srcset="<c:forEach items="${fn:split(widths, ',')}" var="width" varStatus="status">
                         <c:if test="${!status.first}">,</c:if>
