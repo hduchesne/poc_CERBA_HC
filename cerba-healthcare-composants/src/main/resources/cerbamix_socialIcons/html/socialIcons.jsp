@@ -17,16 +17,16 @@
 <%--@elvariable id="renderContext" type="org.jahia.services.render.RenderContext"--%>
 <%--@elvariable id="currentResource" type="org.jahia.services.render.Resource"--%>
 <%--@elvariable id="url" type="org.jahia.services.render.URLGenerator"--%>
-
+<c:set var="siteNode" value="${renderContext.site}"/>
 <%-- if social icons were included, get the urls --%>
-    <c:set var="facebook" value="${currentNode.properties.facebook.string}"/>
-    <c:set var="linkedin" value="${currentNode.properties.linkedIn.string}"/>
-    <c:set var="twitter" value="${currentNode.properties.twitter.string}"/>
-    <c:set var="googlePlus" value="${currentNode.properties.googlePlus.string}"/>
-    <c:set var="pinterest" value="${currentNode.properties.pinterest.string}"/>
-    <c:set var="instagram" value="${currentNode.properties.instagram.string}"/>
-    <c:set var="youtube" value="${currentNode.properties.youtube.string}"/>
-    <c:set var="snapchat" value="${currentNode.properties.snapchat.string}"/>
+    <c:set var="facebook" value="${siteNode.properties.facebook.string}"/>
+    <c:set var="linkedin" value="${siteNode.properties.linkedIn.string}"/>
+    <c:set var="twitter" value="${siteNode.properties.twitter.string}"/>
+    <c:set var="googlePlus" value="${siteNode.properties.googlePlus.string}"/>
+    <c:set var="pinterest" value="${siteNode.properties.pinterest.string}"/>
+    <c:set var="instagram" value="${siteNode.properties.instagram.string}"/>
+    <c:set var="youtube" value="${siteNode.properties.youtube.string}"/>
+    <c:set var="snapchat" value="${siteNode.properties.snapchat.string}"/>
 <!-- Contact Social Icons -->
 
 
