@@ -45,3 +45,16 @@
 [cerbant:banner] > jnt:content, cerbamix:content, mix:title, cerbamix:imageMask
  - cerba:abstract (string,textarea) internationalized
  - cerba:bgImg (weakreference, picker[type='image']) mandatory < 'jmix:image'
+
+
+[cerbamix:socialIcons] mixin
+ extends = jnt:virtualsite
+  itemtype = content
+  - facebook (string) = 'https://'
+  - linkedIn (string) = 'https://'
+  - twitter (string) = 'https://'
+  - googlePlus (string) = 'https://'
+  - pinterest (string) = 'https://'
+  - instagram (string) = 'https://'
+  - youtube (string) = 'https://'
+  - snapchat (string) = 'https://'
