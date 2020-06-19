@@ -109,7 +109,7 @@
                                         sectionCssClass="section"
                                         sectionElement="section"
                                         typeOfGrid="predefinedGrid"/>
-                     <layout-and-grid grid="4_4_4"
+                     <related-content grid="4_4_4"
                                       gridLayout="fixed-width"
                                       jcr:mixinTypes="bootstrap4mix:createContainer bootstrap4mix:createRow bootstrap4mix:createSection bootstrap4mix:predefinedGrid"
                                       jcr:primaryType="bootstrap4nt:grid"
@@ -118,14 +118,14 @@
                                       sectionCssClass="section"
                                       sectionElement="section"
                                       typeOfGrid="predefinedGrid"/>
-                     <layout-and-grid-1 grid="12"
-                                        gridLayout="full-width"
-                                        jcr:mixinTypes="bootstrap4mix:createContainer bootstrap4mix:createRow bootstrap4mix:createSection bootstrap4mix:predefinedGrid"
-                                        jcr:primaryType="bootstrap4nt:grid"
-                                        rowHorizontalAlignment="default"
-                                        rowVerticalAlignment="default"
-                                        sectionElement="div"
-                                        typeOfGrid="predefinedGrid"/>
+                     <call-to-action grid="12"
+                                     gridLayout="full-width"
+                                     jcr:mixinTypes="bootstrap4mix:createContainer bootstrap4mix:createRow bootstrap4mix:createSection bootstrap4mix:predefinedGrid"
+                                     jcr:primaryType="bootstrap4nt:grid"
+                                     rowHorizontalAlignment="default"
+                                     rowVerticalAlignment="default"
+                                     sectionElement="div"
+                                     typeOfGrid="predefinedGrid"/>
                   </pagecontent>
                </fixed-template>
             </base>
