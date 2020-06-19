@@ -56,7 +56,7 @@
                 <stop offset="1" stop-color="#1C449C" stop-opacity="0"/>
             </lineargradient>
             <c:choose>
-                <c:when test="${jcr:isNodeType(renderContext.site, 'cldin:configuration')}">
+                <c:when test="${jcr:isNodeType(renderContext.site, 'cldin:configuration') && renderContext.liveMode == true}">
                     <image id="image0_bw"  preserveAspectRatio="xMidYMid slice" width="100%" height="100%"
                            xlink:href="<cl:url node="${currentNode}" width="1439" gravity="${gravity}" crop="${crop}" raw="${raw}"/>"/>
                 </c:when>
@@ -107,9 +107,9 @@
                 <stop offset="1" stop-color="#1C449C" stop-opacity="0"></stop>
             </linearGradient>
             <c:choose>
-                <c:when test="${jcr:isNodeType(renderContext.site, 'cldin:configuration')}">
+                <c:when test="${jcr:isNodeType(renderContext.site, 'cldin:configuration') && renderContext.liveMode == true}">
                     <image id="image0_bw_xs"  preserveAspectRatio="xMidYMid slice" width="100%" height="100%"
-                           xlink:href="<cl:url node="${currentNode}" width="375" gravity="${gravity}" crop="${crop}" raw="${raw}"/>"/>
+                           xlink:href="<cl:url node="${currentNode}" width="750" gravity="${gravity}" crop="${crop}" raw="${raw}"/>"/>
                 </c:when>
                 <c:otherwise>
                     <image id="image0_bw_xs"  preserveAspectRatio="xMidYMid slice" width="100%" height="100%"

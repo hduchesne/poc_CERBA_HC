@@ -38,7 +38,8 @@
 // - j:criteria (string) = 'jcr:created' autocreated indexed=no hidden
 // - j:sortDirection (string) = 'asc' autocreated indexed=no hidden
 
-
+[cerbant:lastNews] > jnt:lastNews, cerbamix:content, mix:title
+ - j:subNodesView (string, choicelist[templates=cerbant:news,resourceBundle,image]) nofulltext itemtype = layout
 
 // - cerba:maskImg (weakreference, picker[type='image']) < 'jmix:image'
 [cerbant:banner] > jnt:content, cerbamix:content, mix:title, cerbamix:imageMask
