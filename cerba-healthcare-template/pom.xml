@@ -59,7 +59,7 @@
   <name>CERBA Healtcare PoC Templates</name>
   <description>This is the custom profile module (CERBA Healtcare PoC Templates) for running on a Digital Experience Manager server.</description>
   <properties>
-    <jahia-depends>animate,bootstrap4-components,bootstrap4-core,cerba-healthcare-composants,default,font-awesome,jquery,jexperience,jexperience-components,jexperience-queries-components,popperjs</jahia-depends>
+    <jahia-depends>animate,bootstrap4-components,bootstrap4-core,cerba-healthcare-composants,default,font-awesome,jquery,jexperience,jexperience-queries-components,popperjs</jahia-depends>
   </properties>
   <repositories>
     <repository>
