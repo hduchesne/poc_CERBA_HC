@@ -20,7 +20,7 @@
  - cerba:abstract (string,textarea) internationalized
 
 [cerbamix:imageMask] mixin
- - cerba:mask (string, choicelist[resourceBundle]) = 'blueWave' < 'blueWave','darkWave'
+ - cerba:mask (string, choicelist[resourceBundle]) = 'blueWave' < 'blueWave','darkWave','greenWave'
 
 //overwrite the ckeditor configuration for the description feild for news
 [cerbant:news] > jnt:news, cerbamix:content
@@ -53,7 +53,6 @@
   - facebook (string) = 'https://'
   - linkedIn (string) = 'https://'
   - twitter (string) = 'https://'
-  - googlePlus (string) = 'https://'
   - pinterest (string) = 'https://'
   - instagram (string) = 'https://'
   - youtube (string) = 'https://'
